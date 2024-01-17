@@ -1,7 +1,6 @@
 import Search from './search';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import UserEvent from '@testing-library/user-event';
 
 // mock function
 const doSearch = jest.fn();
