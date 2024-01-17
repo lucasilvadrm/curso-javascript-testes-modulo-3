@@ -1,19 +1,16 @@
-import { useCartStore } from '../store/cart';
-
-export default function ProductCard({ product }) {
-  const { add } = useCartStore(store => store.actions);
-
+export default function ProductCard({ product, addToCard }) {
   return (
-    <section>
+    <section data-testid="product-card">
       <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
         <div
+          data-testid="image"
           className="flex items-end justify-end h-56 w-full bg-cover"
           style={{
             backgroundImage: `url(${product.image})`,
           }}
         >
           <button
-            onClick={() => add(product)}
+            onClick={() => addToCard(product)}
             className="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
           >
             <svg
