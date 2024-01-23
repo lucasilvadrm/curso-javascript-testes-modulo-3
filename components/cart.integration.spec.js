@@ -4,6 +4,10 @@ import { makeServer } from '../miragejs/server';
 import userEvent from '@testing-library/user-event';
 import Cart from './cart';
 import { useCartStore } from '../store/cart';
+import { setAutoFreeze } from 'immer';
+
+// impedir que o toggle seja read only
+setAutoFreeze(false);
 
 describe('Cart', () => {
   let server;
