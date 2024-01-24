@@ -33,7 +33,7 @@ describe('Cart Store', () => {
     expect(result.current.state.products).toHaveLength(0);
   });
 
-  fit('should add 2 products to the list and open the cart', async () => {
+  it('should add 2 products to the list and open the cart', async () => {
     const products = server.createList('product', 2);
 
     for (const product of products) {
@@ -83,6 +83,23 @@ describe('Cart Store', () => {
 
     expect(result.current.state.products).toHaveLength(1);
     expect(result.current.state.products[0]).toEqual(product2);
+  });
+
+  it('should not change products in the cart if provided product is not in the array', () => {
+    const [product1, product2, product3] = server.createList('product', 3);
+
+    act(() => {
+      add(product1);
+      add(product2);
+    });
+
+    expect(result.current.state.products).toHaveLength(2);
+
+    act(() => {
+      remove(product3);
+    });
+
+    expect(result.current.state.products).toHaveLength(2);
   });
 
   it('should clear cart', () => {
