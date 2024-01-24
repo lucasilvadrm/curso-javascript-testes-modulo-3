@@ -65,7 +65,7 @@ describe('CartItem', () => {
   it('should not go below zero in the quantity', async () => {
     renderCartItem();
 
-    const [buttonDecrease] = screen.getAllByRole('button');
+    const buttonDecrease = screen.getByTestId('decrease');
     const quantity = screen.getByTestId('quantity');
 
     expect(quantity.textContent).toBe('1');
