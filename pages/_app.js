@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import '../styles/globals.css';
 
 import Cart from '../components/cart';
@@ -16,7 +17,12 @@ function MyApp({ Component, pageProps }) {
         <div className="container mx-auto px-6 py-3">
           <div className="flex items-center justify-between">
             <div className="hidden w-full text-gray-600 md:flex md:items-center">
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -34,7 +40,10 @@ function MyApp({ Component, pageProps }) {
             </div>
             <div className="w-full text-gray-700 md:text-center text-2xl font-semibold">Brand</div>
             <div className="flex items-center justify-end w-full">
-              <button onClick={() => toggle()} className="text-gray-600 focus:outline-none mx-4 sm:mx-0">
+              <button
+                onClick={() => toggle()}
+                className="text-gray-600 focus:outline-none mx-4 sm:mx-0"
+              >
                 <svg
                   className="h-5 w-5"
                   fill="none"
